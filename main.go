@@ -1,16 +1,10 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
 	cards := deck{"Card", newCard(), "Another card"}
 	cards = append(cards, "Fourth card")
 
-	hand, remainingCards := deal(cards, 2)
-
-	fmt.Println(hand.ToString(), remainingCards.ToString())
+	cards.SaveToFile("cards.txt")
 }
 
 func newCard() string {
